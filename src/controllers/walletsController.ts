@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-class UsersController {
+class WalletsController {
     constructor() {
 
     }
@@ -16,4 +16,4 @@ class UsersController {
     }
 }
 
-export default new UsersController();
+export default new WalletsController();
