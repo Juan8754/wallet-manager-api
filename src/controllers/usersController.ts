@@ -27,7 +27,7 @@ class UsersController {
             const { email, password } = req.body;
 
             if (!email || !password) {
-                res.status(400).send("Validation failed for the provided data!");
+                res.status(400).json({ ok: false, message: 'Validation failed for the provided data!' });
                 return;
             }
 
@@ -38,7 +38,7 @@ class UsersController {
             user.password = hashedPassword;
             await user.save();
             
-            res.status(200).send("User created!");
+            res.status(200).json({ ok: false, message: 'User created!' });
         } catch (err) {
             if (err instanceof Error) {
                 res.status(500).send(err.message);
@@ -51,7 +51,7 @@ class UsersController {
             const { email, password } = req.body;
 
             if (!email || !password) {
-                res.status(400).json({ ok: false, message: 'Missing requiered fields: email, password' })
+                res.status(400).json({ ok: false, message: 'Missing requiered fields: email, password' });
                 return;
             }
 

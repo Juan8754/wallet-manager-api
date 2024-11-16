@@ -26,7 +26,7 @@ class WalletsController {
 
             const wallet = await Wallet.findOneBy({id: Number(id), user: {id: Number(user_id)}});
             if (!wallet) {
-                res.status(404).send("Wallet not found");
+                res.status(404).json({ ok: false, message: 'Wallet not found' });
             } else {
                 res.status(200).send(wallet);
             }
@@ -43,7 +43,7 @@ class WalletsController {
             const { tag, chain, address } = req.body;
 
             if (!chain || !address) {
-                res.status(400).json({ ok: false, message: 'Validation failed for the provided data!' })
+                res.status(400).json({ ok: false, message: 'Validation failed for the provided data!' });
                 return;
             }
 
@@ -59,7 +59,7 @@ class WalletsController {
 
                 res.status(200).json({ ok: true, message: 'Wallet created!' });
             } else {
-                res.status(400).json({ ok: false, message: 'Validation failed for the provided data!' })
+                res.status(400).json({ ok: false, message: 'Validation failed for the provided data!' });
             }
         } catch (err) {
             if (err instanceof Error) {
@@ -74,10 +74,10 @@ class WalletsController {
 
             const wallet = await Wallet.findOneBy({id: Number(id), user: {id: Number(user_id)}});
             if (!wallet) {
-                res.status(404).send("Wallet not found");
+                res.status(404).json({ ok: false, message: 'Wallet not found!' });
             } else {
                 await wallet.remove();
-                res.status(200).send("Wallet deleted!");
+                res.status(200).json({ ok: true, message: 'Wallet deleted!' });
             }
         } catch (err) {
             if (err instanceof Error) {
@@ -93,13 +93,13 @@ class WalletsController {
 
             const wallet = await Wallet.findOneBy({id: Number(id), user: {id: Number(user_id)}});
             if (!wallet) {
-                res.status(404).send("Wallet not found");
+                res.status(404).json({ ok: false, message: 'Wallet not found!' });
             } else {
                 if (tag) wallet.tag = tag;
                 if (chain) wallet.chain = chain;
                 if (address) wallet.address = address;
                 await wallet.save();
-                res.status(200).send("Wallet updated!");
+                res.status(200).json({ ok: true, message: 'Wallet updated!' });
             }
         } catch (err) {
             if (err instanceof Error) {
