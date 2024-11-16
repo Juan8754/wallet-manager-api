@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
 import morgan from "morgan";
-import walletsRoutes from "./routes/wallwts";
+import walletsRoutes from "./routes/wallets";
 
 const app = express();
 
