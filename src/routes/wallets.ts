@@ -10,8 +10,8 @@ router.post("/", authenticate, walletsController.create);
 
 router.get("/:id", authenticate, walletsController.getOne);
 
-router.put("/:id", authenticate, walletsController.getAll);
+router.put("/:id", authenticate, walletsController.update);
 
-router.delete("/:id", authenticate, walletsController.getAll);
+router.delete("/:id", authenticate, walletsController.delete);
 
 export default router;
