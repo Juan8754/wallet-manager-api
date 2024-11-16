@@ -16,6 +16,7 @@
     "array-flatten": "^1.1.1",
     "balanced-match": "^1.0.2",
     "base64-js": "^1.5.1",
+    "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "binary-extensions": "^2.3.0",
     "body-parser": "^1.20.3",
@@ -208,8 +209,10 @@
     "yn": "^3.1.1"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.7",
     "@types/morgan": "^1.9.9",
     "@types/node": "^22.9.0",
     "ts-node-dev": "^2.0.0",

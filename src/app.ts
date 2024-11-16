@@ -2,11 +2,15 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import morgan from "morgan";
 import walletsRoutes from "./routes/wallets";
+import usersRoutes from "./routes/users";
 
 const app = express();
 
 app.use(morgan("dev"));
 app.use(cors());
+app.use(express.json());
+
+app.use("/users", usersRoutes);
 
 app.use("/wallets", walletsRoutes);
 
