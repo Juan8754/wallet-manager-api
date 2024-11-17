@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "71d80fce-e80f-4b5f-8666-d6f795ad5dbf",
+		"name": "Wallet API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19608899"
+	},
+	"item": [
+		{
+			"name": "Get User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"user@example.com\",\r\n    \"password\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"user@example.com\",\r\n    \"password\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/signin",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Wallets",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgiLCJpYXQiOjE3MzE3MjcyOTgsImV4cCI6MTczMTczMDg5OH0.Ux-vBjdz9V4V0ZpPtDjj7MnaX_wxKIr5lBo2OCXydKc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/wallets/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"wallets",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Wallet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgiLCJpYXQiOjE3MzE3MjcyOTgsImV4cCI6MTczMTczMDg5OH0.Ux-vBjdz9V4V0ZpPtDjj7MnaX_wxKIr5lBo2OCXydKc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"chain\": \"chain1\",\r\n    \"address\": \"address1\"\r\n    // \"tag\": \"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/wallets/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"wallets",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Wallet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgiLCJpYXQiOjE3MzE3MjcyOTgsImV4cCI6MTczMTczMDg5OH0.Ux-vBjdz9V4V0ZpPtDjj7MnaX_wxKIr5lBo2OCXydKc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/wallets/8",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"wallets",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Wallet",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/wallets/6",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"wallets",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Wallet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgiLCJpYXQiOjE3MzE3MjcyOTgsImV4cCI6MTczMTczMDg5OH0.Ux-vBjdz9V4V0ZpPtDjj7MnaX_wxKIr5lBo2OCXydKc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tag\": \"test tag\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/wallets/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"wallets",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
